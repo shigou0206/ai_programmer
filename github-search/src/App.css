@@ -1,0 +1,66 @@
+/* App.css */
+.app {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  padding: 50px;
+}
+
+.search-container {
+  background-color: #8C6D73; /* 背景颜色 */
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+}
+
+h1 {
+  margin: 20px 0;
+  font-size: 2em;
+  position: relative;
+  display: inline-block;
+  padding: 10px 0;
+}
+
+h1:before, h1:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: white;
+}
+
+h1:before {
+  top: 0;
+}
+
+h1:after {
+  bottom: 0;
+}
+
+.pagination {
+  margin: 20px 0;
+}
+
+.pagination button {
+  margin: 0 5px;
+  padding: 5px 10px;
+  border: none;
+  background-color: #f0f0f0;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.pagination button.active {
+  background-color: #007bff;
+  color: white;
+}
+
+.pagination button:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+.pagination button[disabled] {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}

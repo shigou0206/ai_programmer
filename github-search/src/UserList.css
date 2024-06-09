@@ -1,0 +1,38 @@
+/* UserList.css */
+.user-list {
+  list-style: none;
+  padding: 0;
+}
+
+.user-item {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white; /* 背景颜色 */
+  color: black; /* 文本颜色 */
+  margin: 5px 0;
+  border-radius: 4px;
+}
+
+.user-item a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+.user-item a:hover {
+  text-decoration: underline;
+}
+
+.like-button, .dislike-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  margin: 0 5px;
+}
+
+.like-button.liked, .dislike-button.disliked {
+  color: #007bff;
+}
