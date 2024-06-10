@@ -1,0 +1,15 @@
+.existing-plan {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+}
+
+.form-container, .progress-container {
+    width: 100%;
+    max-width: 800px;
+}
+
+.form-container {
+    margin-bottom: 2rem;
+}

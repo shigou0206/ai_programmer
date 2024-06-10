@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './Form.css';
 
 interface FormProps {
     onSubmit: (formData: FormData) => void;
@@ -7,7 +8,7 @@ interface FormProps {
 const Form: React.FC<FormProps> = ({ onSubmit }) => {
     const [date, setDate] = useState('');
     const [activity, setActivity] = useState('');
-    const [filePath, setFilePath] = useState('');
+    const [filePath, setFilePath] = useState<File | null>(null);
     const [startTime, setStartTime] = useState('');
     const [endTime, setEndTime] = useState('');
 
@@ -16,7 +17,9 @@ const Form: React.FC<FormProps> = ({ onSubmit }) => {
         const formData = new FormData();
         formData.append('date', date);
         formData.append('activity', activity);
-        formData.append('file_path', filePath);
+        if (filePath) {
+            formData.append('file', filePath);
+        }
         formData.append('start_time', startTime);
         formData.append('end_time', endTime);
         onSubmit(formData);
@@ -42,8 +45,8 @@ const Form: React.FC<FormProps> = ({ onSubmit }) => {
                 </select>
             </label>
             <label>
-                选择学习材料路径:
-                <input type="text" value={filePath} onChange={e => setFilePath(e.target.value)} required />
+                上传学习材料:
+                <input type="file" onChange={e => setFilePath(e.target.files ? e.target.files[0] : null)} />
             </label>
             <label>
                 开始时间:
